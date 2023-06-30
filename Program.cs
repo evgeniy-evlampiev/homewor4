@@ -31,18 +31,40 @@
 // 82 -> 10
 // 9012 -> 12
 
-Console.WriteLine("Введите число:");
-int number = int.Parse(Console.ReadLine()!);
+// Console.WriteLine("Введите число:");
+// int number = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine($"{number} -> {GetSum(number)}");
+// Console.WriteLine($"{number} -> {GetSum(number)}");
 
-int GetSum(int num)
+// int GetSum(int num)
+// {
+//     int sum = 0;
+//     while (num>0)
+//     {
+//         sum+=num%10;
+//         num/=10;
+//     }
+//     return sum;
+// }
+
+
+
+
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран. (можно указать любой промежуток)
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
+
+int[] array = GetArray(8, 0, 500);
+Console.WriteLine($"[{String.Join(" , ", array)}]");
+
+int[] GetArray(int size, int minValue, int maxValue)
 {
-    int sum = 0;
-    while (num>0)
+    int[] result = new int[size];
+    for (int i = 0; i < size; i++)
     {
-        sum+=num%10;
-        num/=10;
+        result[i] = new Random().Next(minValue, maxValue);
     }
-    return sum;
+    return result;
 }
